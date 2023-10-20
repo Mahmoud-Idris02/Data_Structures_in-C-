@@ -1,7 +1,7 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include<stdio.h>
+#include <stdio.h>
 #include "platform.h"
 
 typedef struct {
@@ -18,57 +18,50 @@ typedef enum {
 }Stack_State;
 
 /**
- * @brief 
- * 
+ * @brief to help intializing the stack 
  * @param size 
  * @param ret 
  * @return stack_t* 
  */
 stack_t * Stack_create(uint32_t size,return_status * ret);
 /**
- * @brief 
- * 
+ * @brief to free dynamically allocated memory from stack
  * @param stack 
  * @param ret 
  * @return stack_t* 
  */
 stack_t * Stack_Destroy(stack_t * stack,return_status * ret);
 /**
- * @brief 
- * 
+ * @brief to push an void ptr element to the stack array 
  * @param stack 
  * @param valuePtr 
  * @return return_status 
  */
 return_status Stack_push(stack_t * stack,void * valuePtr);
 /**
- * @brief 
- * 
+ * @brief  to pop an void ptr element from stack array 
  * @param stack 
  * @param ret 
  * @return void* 
  */
 void * Stack_pop(stack_t * stack,return_status * ret);
 /**
- * @brief 
- * 
- * @param size 
+ * @brief to get stack top
+ * @param stack ptr* 
  * @param ret 
  * @return void* 
  */
-void * Stack_top(uint32_t size,return_status * ret);
+void * Stack_top(stack_t * stack,return_status * ret);
 /**
- * @brief 
- * 
+ * @brief to know whither stack is full or not
  * @param stack 
  * @return Stack_State 
  */
-static Stack_State Stack_full(stack_t* stack);
+static uint8_t Stack_full(stack_t* stack);
 /**
- * @brief 
- * 
+ * @brief to know whither stack is empty or not
  * @param stack 
  * @return Stack_State 
  */
-static Stack_State Stack_empty(stack_t* stack);
+static uint8_t Stack_empty(stack_t* stack);
 #endif

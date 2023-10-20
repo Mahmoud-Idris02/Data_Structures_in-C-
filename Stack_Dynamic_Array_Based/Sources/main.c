@@ -3,6 +3,7 @@
 
 stack_t *mystack;
 return_status ret;
+void * valuptr ;
 
 int main(void){
     mystack = Stack_create(5,&ret);
@@ -10,5 +11,5 @@ int main(void){
     if (NULL == mystack){
         printf("stack has been destroyed successfully\n");
     }
-    return 0 ; 
+    return 0; 
 }
