@@ -25,55 +25,48 @@ typedef enum{
 }queue_status;
 
 /**
- * @brief 
- * 
+ * @brief to initialize new queue with dynamic size
  * @param size 
  * @param status 
  * @return queue_t* 
  */
 queue_t *queue_create(uint32_t size, queue_status * status);
 /**
- * @brief 
- * 
+ * @brief to free queue heap allocations 
  * @param queue 
  * @return queue_status 
  */
 queue_status queue_destroy(queue_t* queue);
 /**
- * @brief 
- * 
+ * @brief to enque an element
  * @param queue 
  * @param element 
  * @return queue_status 
  */
 queue_status queue_enqueue(queue_t* queue, void * element);
 /**
- * @brief 
- * 
+ * @brief to dequeue an element 
  * @param queue 
  * @param status 
  * @return void* 
  */
 void * queue_dequeue(queue_t *queue, queue_status * status);
 /**
- * @brief 
- * 
+ * @brief get queue element count 
  * @param queue 
  * @param status 
  * @return uint32_t 
  */
 uint32_t queue_count(queue_t *queue,queue_status * status);
 /**
- * @brief 
- * 
+ * @brief get queue front element
  * @param queue 
  * @param status 
  * @return void* 
  */
 void *queue_front(queue_t *queue, queue_status * status);
 /**
- * @brief 
- * 
+ * @brief get queue rear element
  * @param queue 
  * @param status 
  * @return void* 
