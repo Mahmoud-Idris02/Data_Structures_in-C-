@@ -51,10 +51,10 @@ queue_status queue_enqueue(queue_t* queue, void * element);
  * @brief 
  * 
  * @param queue 
- * @param element 
- * @return queue_status 
+ * @param status 
+ * @return void* 
  */
-queue_status queue_dequeue(queue_t* queue, void * element);
+void * queue_dequeue(queue_t *queue, queue_status * status);
 /**
  * @brief 
  * 
@@ -67,15 +67,17 @@ uint32_t queue_count(queue_t *queue,queue_status * status);
  * @brief 
  * 
  * @param queue 
+ * @param status 
  * @return void* 
  */
-void * queue_front(queue_t* queue);
+void *queue_front(queue_t *queue, queue_status * status);
 /**
  * @brief 
  * 
  * @param queue 
+ * @param status 
  * @return void* 
  */
-void * queue_rear(queue_t* queue);
+void *queue_rear(queue_t *queue, queue_status * status);
 
 #endif
